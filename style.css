@@ -1,95 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 * {
-  color: #ffffff;
-  padding: 0px;
-  margin: 0px;
-}
-.banner {
-  background: #202020;
-  height: 56px;
-  padding: 0px 20px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0px;
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
+    padding:0;
+    margin:0;
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
 }
 
-#menu {
-  filter: invert(100%);
-  flex-basis: 10%
+button {
+    background: rgba(32,32,32,0.2);
 }
 
-#youtubelogo{
-  flex-basis:90%
+body {
+    background: rgb(24,24,24);
 }
 
-.video {
-  background: #000;
+hr {
+    height: 1px;
+    border: none;
+    background: #303030;
+    margin: 15px 0px;
 }
-.video {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
+
+#upperBar {
+    background: rgb(32,32,32);
+    height:56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.video iframe,
-.video object,
-.video embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+#mainMenu {
+    display: flex;
 }
-.description {
-  background: #181818;
+
+#menuBar {
+    cursor: pointer;
+    margin: 0px 30px;
 }
+
+#search {
+    display: flex;
+}
+
+#searchLine {
+    background: rgb(18,18,18);
+    display: inline-block;
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: #313131;
+    box-shadow: 0px;
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+
+    position: relative;
+
+    box-sizing: border-box;
+    padding: 0px 10px;
+    transition:0.1s;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display:none;
+}
+
+#searchLine::placeholder {
+    color:#888888;
+}
+
+#searchLine:focus {
+    outline: none;
+    border-color: #1B62B9;
+    transition:0.1s;
+}
+
+#searchButton {
+    width: 64px;
+    height: 40px;
+    cursor: pointer;
+    background: #313131;
+    border-width:0px;
+}
+
+#searchButton::after {
+    content: "검색창";
+    background: gray;
+    opacity: 0;
+    position: absolute;
+    top:50px;
+    right:35vw; 
+    width: 50px;
+    cursor:default;
+    transition: 0.1s;
+    display: none;
+}
+
+#searchButton:hover::after {
+    opacity:0.7;
+    transition: 0.1s;
+    display: inline-block;
+}
+
+
+
+
+
+#functions {
+    display: flex;    
+}
+
+#voiceSearch {
+    width: 40px; height: 40px;
+    margin-left: 30px;
+    border-radius: 50%;
+    border-width:0;
+    position: relative;
+    background: #181818;
+    cursor: pointer;
+}
+
+#voiceSearch::after {
+    content: "음성으로 검색";
+    background: gray;
+    display: none;
+    position: absolute;
+    top:50px;
+    right:-5vw; 
+    width: 90px;
+    cursor: default;
+    opacity:0;
+    transition: 0.3s;
+}
+
+#voiceSearch:hover::after {
+    display: inline-block;
+    opacity:0.7;
+    transition: 0.3s;
+}
+
+#upload {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border-width:0;
+    background: rgba(32,32,32,0);
+    cursor: pointer;
+}
+
+#upload::after {
+    content: "만들기";
+    background: gray;
+    opacity: 0;
+    position: absolute;
+    top:50px;
+    right:15vw; 
+    width: 50px;
+    cursor:default;
+    transition: 0.1s;
+    display: none;
+}
+
+#upload:hover::after {
+    opacity:0.7;
+    transition: 0.1s;
+    display: inline-block;
+}
+
+#youtubeApp {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border-width:0;
+    background: rgba(32,32,32,0);
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+#youtubeApp::after {
+    content: "YouTube 앱";
+    background: gray;
+    opacity: 0;
+    position: absolute;
+    top:50px;
+    right:10vw; 
+    width: 75px;
+    cursor:default;
+    transition: 0.1s;
+    display: none;
+}
+
+#youtubeApp:hover::after {
+    opacity:0.7;
+    transition: 0.1s;
+    display: inline-block;
+}
+
+
+
+#noti {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border-width:0;
+    background: rgba(32,32,32,0);
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+#noti::after {
+    content: "알림";
+    background: gray;
+    opacity: 0;
+    position: absolute;
+    top:50px;
+    right:7vw; 
+    width: 40px;
+    cursor:default;
+    transition: 0.1s;
+    display: none;
+}
+
+#noti:hover::after {
+    opacity:0.7;
+    transition: 0.1s;
+    display: inline-block;
+}
+
+.account {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border-width:0;
+    background: mediumseagreen;
+    cursor: pointer;
+    margin: 0px 15px;
+}
+
+#videoContainer {
+    width: calc(100vw - 50px);
+    height: calc((100vw - 50px) / 16 * 9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 25px;
+    margin-top: 20px;
+
+    background: black;
+}
+
+
+.BODY {
+    box-sizing : border-box;
+    padding: 25px;
+}
+
+#undertitle {
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#views-date {
+    color: #AAAAAA;
+    font-size: 14px;
+}
+
+#undertitleFunctions {
+    display: flex;
+}
+
+#undertitleFunctions div {
+    margin: 0px 10px;
+}
+
+#like, #hate, #share, #save {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#likebt, #hatebt, #sharebt, #savebt, #more {
+    border-width:0;
+    width:30px; height:30px;
+    cursor: pointer;
+}
+
+#hate span, #like span, #share span, #save span {
+    margin-left: 6px;
+}
+
+#like::before, #hate::before, #share::before, #save::before {
+    height: 25px;
+    text-align: center;
+    display: none;
+    background: gray;
+    font-size: 14px;
+    position: absolute;
+    margin-top: 100px;
+    transition : 0.1s;
+}
+
+#like::before {
+    content: '이 동영상이 마음에 듭니다.';
+    width: 180px;
+    cursor: default;
+}
+
+#like:hover::before {
+    opacity:0.7;
+    display:inline-block;
+}
+
+#hate::before {
+    content: '이 동영상이 마음에 들지 않습니다.';
+    width: 230px;
+    cursor: default;
+}
+
+#share:hover::before {
+    opacity:0.7;
+    display:inline-block;
+}
+
+#share::before {
+    content: '공유';
+    width: 40px;
+    cursor: default;
+}
+
+#hate:hover::before {
+    opacity:0.7;
+    display:inline-block;
+}
+
+#save::before {
+    content: '저장';
+    width: 40px;
+    cursor: default;
+}
+
+#save:hover::before {
+    opacity:0.7;
+    display:inline-block;
+}
+
+#channel {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.left p{
+    color: #AAAAAA;
+}
+
+.uploader {
+    width: 45px; height:45px;
+    background: tomato;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#uploaderComment {
+    margin-left: 15px;
+}
+
+#uploaderComment h2 {
+    cursor: pointer;
+}
+
+#uploaderComment h2::after {
+    content: '런닝맨 - 스브스 공식 채널';
+    display: none;
+    position: absolute;
+    background: gray;
+    text-align: center;
+    width: 170px;
+    height: 25px;
+    opacity: 0.7;
+    margin-top: -25px;
+    margin-left: -165px;
+    transition: all 0.2s;
+}
+
+#uploaderComment h2:hover::after {
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+#subscribe {
+    background: red;
+    border-width: 0;
+    border-radius: 5%;
+    width: 72px; height: 39px;
+    cursor: pointer;
+}
+
+#subscribe::after {
+    content: '구독';
+    display: none;
+    position: absolute;
+    background: gray;
+    width: 35px;
+    opacity: 0.7;
+    margin-top: 40px;
+    margin-left: -20px;
+    transition: 0.1s;
+}
+
+#subscribe:hover::after {
+    display: inline-block;
+    transition: 0.1s;
+}
+
+
+
 h1 {
-  padding: 10px 0px 5px 20px;
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-}
-p,.rbuttons {
-  padding: 5px 0px;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  color: #aaa;
-}
-p{
-  margin:0px 20px;
-}
-.rbuttons{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
+    font-size: 18px;
+    font-weight: 400;
 }
 
-.views{
-  flex-basis:50%;
-  margin: 0px 0px 0px 20px;
+h2 {
+    font-size: 14px;
+    font-weight: 400;
 }
-[class*="item"]:hover{
-  color:white;
+
+p{
+    font-size: 12px;
+    font-weight: 200;
 }
-[class*="item"]:active{
-  color:tomato;
+
+
+
+#description {
+    margin: 0px 55px;
 }
-.item1{
-  flex-basis:10%;
+
+#moreDes {
+    padding: 10px 0px;
+    background: none;
+    border-width: 0;
+    font-size: 12px;
+    color: #AAAAAA;
+    cursor: pointer;
 }
-.item2{
-  flex-basis:10%;
+
+
+
+.rV {
+    background:rgb(49, 65, 85);
+    width: 168px;
+    height: calc(168px / 16 * 9);
+    margin-bottom: 10px;
+    cursor: pointer;
 }
-.item3{
-  flex-basis:10%;
+
+.rV::after {
+    content: '동영상';
+    position: absolute;
+    margin-left: 100px;
 }
-.item4{
-  flex-basis:10%;
+
+#relatedVideos {
+    text-align: center;
 }
-.item5{
-  flex-basis:10%;
+
+#moreRV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: calc(100vw - 60px);
+    height: 39px;
+    background: none;
+
+    border: 1px solid #3892DF;
+    border-radius: 3px;
+
+    color: #3892DF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+#commentsTitle {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+#sort {
+    margin-left: 30px;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+}
+
+#sort span {
+    margin-left:10px;
+    font-size: 14px;
+}
+
+#commentsPut {
+    display: flex;
+}
+
+#commentsInput {
+    background: #181818;
+    margin-left: 30px;
+    width: calc(100vw - 115px);
+    border-width: 0px;
+    outline: none;
+    border-bottom: 1px solid rgb(48,48,48);
+    transition: 0.1s;
+}
+
+#commentsInput:focus {
+    border-bottom: 2px solid #fff;
+    transition: 0.1s;
+}
+
+#commentsInput::placeholder {
+    color:#AAAAAA;
+}
+
+#Ac {
+    width: 42px;
+    height: 42px;
+    margin: 0px;
+}
+
+body::-webkit-scrollbar {
+    background: rgb(0,0,0,0);
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #AAAAAA;
+}
+
+.cO {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: space-between;
+}
+
+.setmore {
+    opacity:0;
+}
+
+.cO:hover .setmore {
+    opacity:1;
+}
+
+.commentsUser {
+    width: 42px;
+    height: 42px;
+    background: darkred;
+    border-radius: 21px;
+    cursor: pointer;
+}
+
+
+.coM {
+    margin-left: 20px;
+    width: calc(100vw - 120px);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.coM p {
+    margin: 5px 0px;
+    font-size: 14px;
+}
+
+.undercomments, .like, .hate {
+    display: flex;
+    align-items: center;
+}
+
+.likeBT, .hateBT {
+    background: rgb(0,0,0,0);
+    border: rgb(0,0,0,0);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.undercomments {
+    margin-top: 15px;
+}
+
+.like, .hate {
+    margin-right: 20px;
+    font-size: 12px;
 }

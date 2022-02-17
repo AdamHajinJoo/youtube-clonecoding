@@ -1,0 +1,95 @@
+* {
+  color: #ffffff;
+  padding: 0px;
+  margin: 0px;
+}
+.banner {
+  background: #202020;
+  height: 56px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+#menu {
+  filter: invert(100%);
+  flex-basis: 10%
+}
+
+#youtubelogo{
+  flex-basis:90%
+}
+
+.video {
+  background: #000;
+}
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video iframe,
+.video object,
+.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.description {
+  background: #181818;
+}
+h1 {
+  padding: 10px 0px 5px 20px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+}
+p,.rbuttons {
+  padding: 5px 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  color: #aaa;
+}
+p{
+  margin:0px 20px;
+}
+.rbuttons{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+
+.views{
+  flex-basis:50%;
+  margin: 0px 0px 0px 20px;
+}
+[class*="item"]:hover{
+  color:white;
+}
+[class*="item"]:active{
+  color:tomato;
+}
+.item1{
+  flex-basis:10%;
+}
+.item2{
+  flex-basis:10%;
+}
+.item3{
+  flex-basis:10%;
+}
+.item4{
+  flex-basis:10%;
+}
+.item5{
+  flex-basis:10%;
+}
